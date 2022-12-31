@@ -11,7 +11,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", index)
-	fmt.Println("Server is starting...")
-	http.ListenAndServe(":11130", nil)
 	fmt.Println("Server is started")
+	http.ListenAndServe(":11130", nil)
+
 }
