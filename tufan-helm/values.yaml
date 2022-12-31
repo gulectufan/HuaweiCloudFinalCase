@@ -1,0 +1,5 @@
+# Default values for emre-helm.
+# This is a YAML-formatted file.
+appTierReplicas: 5
+deploymentName: main-deployment
+serviceName: main-service

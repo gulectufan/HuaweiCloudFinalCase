@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: main
+  name: main-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: main
+  ports:
+  - port: 11130
+    targetPort: 11130

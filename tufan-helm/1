@@ -1,0 +1,3 @@
+# Default values for tufan-helm.
+# This is a YAML-formatted file.
+appTierReplicas: 5

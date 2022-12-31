@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-deployment
+spec:
+  selector:
+    matchLabels:
+      app: main
+  replicas: 3
+  revisionHistoryLimit: 0
+  progressDeadlineSeconds: 30
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 2
+  template:
+    metadata:
+      labels:
+        app: main
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - main
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - name: main
+        image: gulectufan/hwc-deployment:latest #swr.ap-southeast-3.myhuaweicloud.com/cce-demo-tufan/gulectufan/hwc-deployment:latest
+        ports:
+        - containerPort: 11130
