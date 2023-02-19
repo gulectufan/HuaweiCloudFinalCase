@@ -1,5 +1,9 @@
 # Tufa GÜLEÇ
-This repo is created for mini DevOps challenge
+This repo was created for Huawei Cloud DevOps challenge
 
 to run my image under https://hub.docker.com/r/gulectufan/hwc-deployment
-#docker pull gulectufan/hwc-deployment
+
+```sh
+docker pull gulectufan/hwc-deployment
+```
+
